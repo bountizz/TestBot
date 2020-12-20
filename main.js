@@ -4,7 +4,7 @@ const config = require('./config.json');
 
 const client = new Discord.Client();
 
-const fetch = require("node-fetch");
+const api = require('./api/request.js');
 
 const prefix = config.prefix;
 
@@ -52,7 +52,7 @@ client.on('message', message =>{
     }else if (command === 'instagram'){
         client.commands.get('instagram').execute(message, args);
     }else if(command === 'rule34'){
-        client.commands.get('rule34').execute(args[0]);
+        api.getImage(/*argument*/);
     }
 });
 
