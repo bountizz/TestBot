@@ -4,7 +4,9 @@ const config = require('./config.json');
 
 const client = new Discord.Client();
 
-const prefix = '-';
+const fetch = require("node-fetch");
+
+const prefix = config.prefix;
 
 const fs = require('fs');
 
@@ -28,7 +30,7 @@ client.on('message', message =>{
     //test modération
     let blackListed = ['enculé', 'filsDePute', 'fdp', 'niqueTaMere', 'niqueTonPere', 'chibrax'];
     let foundInText = false;
-    for (var i in blackListed){
+    for (let i in blackListed){
         if (message.content.replace(/\s+/g, '').toLowerCase().includes(blackListed[i].replace(/\s+/g, '').toLowerCase())) foundInText = true;
     }
 
@@ -49,6 +51,8 @@ client.on('message', message =>{
         client.commands.get('ping').execute(message, args);
     }else if (command === 'instagram'){
         client.commands.get('instagram').execute(message, args);
+    }else if(command === 'rule34'){
+        client.commands.get('rule34').execute(args[0]);
     }
 });
 

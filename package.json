@@ -9,6 +9,7 @@
   "author": "Bountizz",
   "license": "ISC",
   "dependencies": {
+    "cross-fetch": "^3.0.6",
     "discord.js": "^12.5.1"
   }
 }
