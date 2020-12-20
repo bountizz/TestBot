@@ -4,8 +4,6 @@ const config = require('./config.json');
 
 const client = new Discord.Client();
 
-const api = require('./api/request.js');
-
 const prefix = config.prefix;
 
 const fs = require('fs');
@@ -52,7 +50,7 @@ client.on('message', message =>{
     }else if (command === 'instagram'){
         client.commands.get('instagram').execute(message, args);
     }else if(command === 'rule34'){
-        api.getImage(/*argument*/);
+        // lancer le fichier commands/rule34 avec deux arguments, l'objet message de l'event, et les arguments de la commande
     }
 });
 
