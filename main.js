@@ -55,8 +55,9 @@ client.on('message', message =>{
     // embed message
     }else if(command === 'test'){
         client.commands.get('test').execute(message, args);
-    }
-});
+    }else if (command === 'clear'){
+        client.commands.get('clear').execute(message, args);
+}});
 
 
 
