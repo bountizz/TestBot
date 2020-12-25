@@ -13,6 +13,9 @@ module.exports= {
         }else if(!args[0]){
             message.delete();
             message.channel.send('*Veuillez préciser le nombre de messages à supprimer.*');
+        }else if(args[0] == 1){
+            message.channel.bulkDelete(args[0]);
+            message.channel.send("*" + args[0] + ' message a été supprimé.*');
         }else{
             message.channel.bulkDelete(args[0]);
             message.channel.send("*" + args[0] + ' messages ont été supprimés.*');
