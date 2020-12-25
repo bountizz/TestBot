@@ -12,6 +12,6 @@ module.exports= {
          * Appel de l'api :
          *      api.getImage('rayman');
          */
-        api.getImage('rayman');
+        api.getImage(args[0]);
     }
 }
