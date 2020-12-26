@@ -9,6 +9,12 @@ module.exports= {
         const xml = await api.getImage(args[0]);
         
         console.log(xml);
-    
+        
+
+        /*pour chopper le file_url:
+        let début = xml.indexOf('file_url="') + 'file_url="'.length;
+        let fin = xml.lasIndexOf('" parent_id=');
+        console.log(xml.substring(début, fin - début));
+        */
     }
 }
