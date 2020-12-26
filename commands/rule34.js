@@ -14,7 +14,7 @@ module.exports= {
         /*pour chopper le file_url:
         let début = xml.indexOf('file_url="') + 'file_url="'.length;
         let fin = xml.lasIndexOf('" parent_id=');
-        console.log(xml.substring(début, fin - début));
+        message.chanel.send(xml.substring(début, fin - début));
         */
     }
 }
