@@ -25,7 +25,7 @@ client.once('ready', () => {
 
 client.on('message', message =>{
 
-    //test modération
+    /*test modération
     let blackListed = ['enculé', 'filsDePute', 'fdp', 'niqueTaMere', 'niqueTonPere', 'chibrax'];
     let foundInText = false;
     for (let i in blackListed){
@@ -37,7 +37,7 @@ client.on('message', message =>{
         message.delete();
     }
 
-    
+    */
     //fin test modération
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
