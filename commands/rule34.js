@@ -11,10 +11,10 @@ module.exports= {
         console.log(xml);
         
 
-        /*pour chopper le file_url:
+        
         let début = xml.indexOf('file_url="') + 'file_url="'.length;
-        let fin = xml.lasIndexOf('" parent_id=');
-        message.chanel.send(xml.substring(début, fin - début));
-        */
+        let fin = xml.lastIndexOf('" parent_id=');
+        message.channel.send(xml.substring(début, fin));
+        
     }
 }
