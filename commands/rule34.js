@@ -8,35 +8,36 @@ module.exports= {
         
         const xml = await api.getImage(args[0]);
         
+        //console.log("XML DANS LE RULE34");
         console.log(xml);
         
-        if(xml.includes('posts count="0"')){
+        /*if(xml.includes('posts count="0"')){
             message.channel.send('Aucun post ne correspond à la recherche "' +args[0]+'".');
-        }else{
+        }else{*/
         
-        
+            /*          
+            let débutC = xml.indexOf('posts count="') + 'posts count="'.length;
+            let finC = xml.lastIndexOf('" offset=');
+            
+            let postCount = xml.substring(débutC, finC);
+            console.log(postCount);
+            let random = Math.ceil(Math.random()*postCount);
+            console.log(random);
+            */
 
-        let débutC = xml.indexOf('posts count="') + 'posts count="'.length;
-        let finC = xml.lastIndexOf('" offset=');
-        
-        let postCount = xml.substring(débutC, finC);
-        console.log(postCount);
-        let random = Math.ceil(Math.random()*postCount);
-        console.log(random);
+            let début = xml.indexOf('file_url="') + 'file_url="'.length;
+            let fin = xml.lastIndexOf('" parent_id=');
+            
 
-        let début = xml.indexOf('file_url="') + 'file_url="'.length;
-        let fin = xml.lastIndexOf('" parent_id=');
-        
-        //embed test
-        const embedRule = new Discord.MessageEmbed()
-            .setColor('#bd1111')
-            .setImage(xml.substring(début, fin));
-        
-        message.channel.send(embedRule);
+            //embed test
+            const embedRule = new Discord.MessageEmbed()
+                .setColor('#bd1111')
+                .setImage(xml.substring(début, fin));
+            
+            message.channel.send(embedRule);
 
-        //message.channel.send(xml.substring(début, fin));
+            //message.channel.send(xml.substring(début, fin));
 
-
-        }
+        //}
     }
 }
