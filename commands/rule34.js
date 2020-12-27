@@ -1,5 +1,5 @@
 const api = require('../api/request.js');
-
+const Discord = require('discord.js');
 
 module.exports= {
     name: 'rule34',
@@ -24,12 +24,19 @@ module.exports= {
         let random = Math.ceil(Math.random()*postCount);
         console.log(random);
 
-        
-        
         let début = xml.indexOf('file_url="') + 'file_url="'.length;
         let fin = xml.lastIndexOf('" parent_id=');
         
-        message.channel.send(xml.substring(début, fin));
+        //embed test
+        const embedRule = new Discord.MessageEmbed()
+            .setColor('#bd1111')
+            .setImage(xml.substring(début, fin));
+        
+        message.channel.send(embedRule);
+
+        //message.channel.send(xml.substring(début, fin));
+
+
         }
     }
 }
