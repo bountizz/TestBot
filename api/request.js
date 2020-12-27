@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
 const Bluebird = require('bluebird');
+const postCount = require('../commands/rule34.js');
 fetch.Promise = Bluebird;
 
 module.exports = {
@@ -21,6 +22,6 @@ module.exports = {
         return get_data(url);
             
     }
-        
-        
+   
+    
 }

@@ -10,11 +10,25 @@ module.exports= {
         
         console.log(xml);
         
-        let début = xml.indexOf('file_url="') + 'file_url="'.length;
-        let fin = xml.lastIndexOf('" parent_id=');
         if(xml.includes('posts count="0"')){
             message.channel.send('Aucun post ne correspond à la recherche "' +args[0]+'".');
         }else{
+        
+        /* nombre de post + random sur ce nombre log dans la console.
+
+        let débutC = xml.indexOf('posts count="') + 'posts count="'.length;
+        let finC = xml.lastIndexOf('" offset=');
+        
+        let postCount = xml.substring(débutC, finC);
+        console.log(postCount);
+        let random = Math.floor(Math.random()*postCount);
+        console.log(random);
+        
+        */
+        
+        let début = xml.indexOf('file_url="') + 'file_url="'.length;
+        let fin = xml.lastIndexOf('" parent_id=');
+        
         message.channel.send(xml.substring(début, fin));
         }
     }
