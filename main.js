@@ -51,7 +51,7 @@ client.on('message', message =>{
         client.commands.get('instagram').execute(message, args);
     }else if(command === 'rule34'){
         // lancer le fichier commands/rule34 avec deux arguments, l'objet message de l'event, et les arguments de la commande
-        client.commands.get('rule34').execute(message,args);
+        client.commands.get('rule34').execute(message,args, client);
     // embed message
     }else if(command === 'test'){
         client.commands.get('test').execute(message, args);
