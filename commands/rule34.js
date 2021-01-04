@@ -29,7 +29,7 @@ module.exports= {
 
                 const embedImage = new Discord.MessageEmbed()
                 .setTitle(args[0] + ', recherche faite par ' + message.author.username)
-                //.setDescription()
+                .setDescription(bleh + ' résultats trouvés.')
                 .setImage(putainFini)
                 .setColor('#bd1111')
                 .setFooter("World's Best Bot By 𝕭𝖔𝖚𝖓𝖙𝖎𝖟𝖟", client.user.displayAvatarURL()); 
