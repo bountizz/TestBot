@@ -10,8 +10,8 @@ module.exports = {
         return new Promise(async (exit, exitWithError) => {
 
             let url = "https://rule34.xxx/index.php?page=dapi&s=post&q=index&limit=1&tags=" + tag;
-
-            if(random != null) url = "https://rule34.xxx/index.php?page=dapi&s=post&q=index&limit=1&tags=" + tag + "&id=" + random;
+            if(random != null) url = "https://rule34.xxx/index.php?page=dapi&s=post&q=index&limit=1&tags=" + tag + "&pid=" + random;
+            
                      
                                 
             const response = await fetch(url);
