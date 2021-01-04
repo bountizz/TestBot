@@ -29,6 +29,7 @@ module.exports= {
 
                 const embedImage = new Discord.MessageEmbed()
                 .setTitle(args[0] + ', recherche faite par ' + message.author.username)
+                .setURL(putainFini)
                 .setDescription(bleh + ' résultats trouvés.')
                 .setImage(putainFini)
                 .setColor('#bd1111')
