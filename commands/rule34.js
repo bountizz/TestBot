@@ -33,7 +33,7 @@ module.exports= {
                 .setDescription(bleh + ' résultats trouvés.')
                 .setImage(putainFini)
                 .setColor('#bd1111')
-                .setFooter("World's Best Bot By 𝕭𝖔𝖚𝖓𝖙𝖎𝖟𝖟", client.user.displayAvatarURL()); 
+                .setFooter("World's Best Bot", client.user.displayAvatarURL()); 
             
             message.channel.send(embedImage);
        
