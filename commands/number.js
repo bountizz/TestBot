@@ -26,7 +26,7 @@ module.exports= {
             message.awaitReactions((reaction, user) => user.id == joueur.id && (reaction.emoji.name == '⬆️' || reaction.emoji.name == '⬇️'),{max: 1, time: 10000})
                 .then(async collected => {
                     if(collected.first().emoji.name == '⬆️') {
-                        if (nombreAleatoire <= secondAleatoire){
+                        if (secondAleatoire >= nombreAleatoire){
                             ++round;
                             return message.channel.send('bravo le nombre suivant était ' + secondAleatoire);
                             
@@ -34,7 +34,7 @@ module.exports= {
                             
                             return;
                     }if(collected.first().emoji.name == '⬇️') {
-                        if (nombreAleatoire >= secondAleatoire){
+                        if (secondAleatoire <= nombreAleatoire){
                             ++round;
                             return message.channel.send('bravo le nombre suivant était ' + secondAleatoire);
                         }else message.channel.send('perdu le nombre suivant était ' + secondAleatoire)
