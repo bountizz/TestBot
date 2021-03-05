@@ -17,13 +17,11 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-
-
 client.once('ready', () => {
     client.user.setPresence({
         status: 'online',
         activity: {
-            name: '-rule34 actif les enfants.',
+            name: '-help',
         }
     })
     console.log('Lewds en avance les loulous');
@@ -40,11 +38,19 @@ client.on('message', message =>{
         client.commands.get('rule34').execute(message,args, client);
     }else if (command === 'clear'){
         client.commands.get('clear').execute(message, args);
-    }else if (command === 'ttt'){
-        console.log(client.id);
-            client.commands.get('ttt').execute(message, args);
+    }else if (command === 'flip'){
+        client.commands.get('flip').execute(message,args, client);
+    }else if (command === 'number'){
+        client.commands.get('number').execute(message,args, client);
+    }else if (command === 'ball'){
+        client.commands.get('ball').execute(message,args, client);
+    }else if (command === 'dick'){
+        client.commands.get('dick').execute(message,args, client);
+    }else if (command === 'gay'){
+        client.commands.get('gay').execute(message,args, client);
+    }else if (command === 'help'){
+        client.commands.get('help').execute(message, client);
 }});
-
 
 
 

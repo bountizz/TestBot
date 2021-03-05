@@ -10,22 +10,15 @@ module.exports= {
         .then(answer => {
             
             const reponse = JSON.parse(answer);
-            console.log(reponse);
             var bleh = reponse['posts']['$']['count'];
-            console.log(bleh);
             if (bleh != 0){
             var random = Math.ceil(Math.random()*(bleh));
-            console.log("random = " + random);
 
             api.getImage(args[0],random)
             .then(answer2 =>{
 
                 const reponse2 = JSON.parse(answer2);
-                //console.log(reponse2);
-                //console.log(reponse2);
                 var putainFini = reponse2['posts']['post'][0]['$']['file_url'];
-                console.log(putainFini);
-                //message.channel.send(putainFini);
 
                 const embedImage = new Discord.MessageEmbed()
                 .setTitle(args[0] + ', recherche faite par ' + message.author.username)
@@ -36,25 +29,19 @@ module.exports= {
                 .setFooter("World's Best Bot", client.user.displayAvatarURL()); 
             
             message.channel.send(embedImage);
+            let date_ob = new Date();
+            let hours = date_ob.getHours();
+            let minutes = date_ob.getMinutes();
+            console.log(message.author.username + ' recherche ' + args[0] + " a " + hours + ":" + minutes);
        
-
             }).catch ((error) => {
                 console.error(error);
             });
         }else {
             message.channel.send('Aucun post ne correspond à la recherche "' +args[0]+'".');
         }
-
-            //  Code à mettre ici
-            //  Variable avec le résultat : answer - fait
-            //  Il faut maintenant lire PROPREMENT le json, pour récupérer le count, refaire une requête
-            //  via exactement le même principe que celle là (donc api.getImage(args[0],IciMettreLeRandom).then().catch())
-            //  pour faire une requête avec un random. DOnc e random est calculé entre 0 et count.
-
-            
-            //message.channel.send('Aucun post ne correspond à la recherche "' +args[0]+'".');
         })
-        .catch ((error) => { /* envoie error au joueur */
+        .catch ((error) => { 
             console.error(error);
         });
         
