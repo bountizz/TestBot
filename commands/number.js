@@ -31,7 +31,6 @@ module.exports= {
                             return message.channel.send('bravo le nombre suivant était ' + secondAleatoire);
                             
                         }else message.channel.send('perdu le nombre suivant était ' + secondAleatoire)
-                            .catch(console.error);
                             
                             return;
                     }if(collected.first().emoji.name == '⬇️') {
@@ -39,12 +38,11 @@ module.exports= {
                             ++round;
                             return message.channel.send('bravo le nombre suivant était ' + secondAleatoire);
                         }else message.channel.send('perdu le nombre suivant était ' + secondAleatoire)
-                            .catch(console.error);
                             
                             return;
                     }
                     else return message.channel.send('Temps écoulé');
-                }).catch(async () => {return msg.channel.send(`Temps écoulé`)});
+                }).catch(async () => {return message.channel.send(`Temps écoulé`)});
         
 
         /*const filter = (reaction, user) => {
