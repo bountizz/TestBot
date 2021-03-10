@@ -10,7 +10,8 @@ module.exports= {
                 .setTitle('**Les différentes commandes:**')
                 .setDescription(`-ball
                 -clear
-                -flip`)
+                -flip
+                -number`)
                 .setColor('#bd1111')
                 .setFooter("World's Best Bot", client.user.displayAvatarURL()); 
 
